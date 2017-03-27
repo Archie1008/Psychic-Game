@@ -3,81 +3,24 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Psychic Game</title>
+	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<h1>Psychic Game</h1>
+<div class=wrapper>
+	<h1>Psychic Game</h1>
 
-<p>Guess what letter I'm thinking of</p>
+	<p>Guess what letter I'm thinking of</p>
 
-<p id="wins">Wins :</p>
+	<p id="wins">Wins :</p>
 
-<p id="losses">Losses :</p>
+	<p id="losses">Losses :</p>
 
-<p id="guessesLeft">Guesses Left :</p>
+	<p id="guessesLeft">Guesses Left :</p>
 
-<p id="entry"> Your guesses so far: </p>
+	<p id="entry"> Your guesses so far: </p>
+</div>
 
-<script type="text/javascript">
-
-//after guessed correct letter and after 9 bad guesses reset "entry" to blank
-
-//make the only alphabet characters appear in "entry"
-
-//don't fonget to put <script> in separate js file
-
-//put comments  
-	
-
-	var alphabet = ["a" , "b" , "c" , "d" , "e" , "f" , "g" , "h" , "i" , "j" , "k" , "l" , "m" , "n" , "o" , "p" , "q" , "r" , "s" , "t" , "u" , "v" , "w" , "x" , "y" , "z"];
-
-	var entry = document.getElementById('entry');
-
-	var wins = 0;
-
-	var losses = 0;
-
-	var guessesLeft = 9;
-
-	document.querySelector("#wins").innerHTML = "<p>Wins :" + wins + "</p>";
-
-	document.querySelector("#losses").innerHTML = "<p>Losses :" + losses + "</p>";
-
-	document.querySelector("#guessesLeft").innerHTML = "<p>Guesses Left :" + guessesLeft + "</p>";
-
-	var computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)].toLowerCase();
- 	console.log(computerGuess);
-
-
-	document.onkeyup = function(event) {
-  		// var letter = String.fromCharCode(event.keyCode).toLowerCase();
-  		var userGuess = event.key.toLowerCase();
- 		entry.innerHTML += userGuess;
- 		if (userGuess == computerGuess) {
- 			wins++;
- 			guessesLeft = 10;
- 			document.querySelector("#wins").innerHTML = "<p>Wins :" + wins + "</p>"; 
- 			document.querySelector("#guessesLeft").innerHTML = "<p>Guesses Left :" + guessesLeft + "</p>";
- 			
-
- 		}
-
- 		if (guessesLeft >= 1) {
- 			guessesLeft--;
- 			document.querySelector("#guessesLeft").innerHTML = "<p>Guesses Left :" + guessesLeft + "</p>";
-
- 		}
-
- 		if (guessesLeft < 1) {
- 			losses++;
- 			guessesLeft = 9;
- 			document.querySelector("#guessesLeft").innerHTML = "<p>Guesses Left :" + guessesLeft + "</p>";
- 			document.querySelector("#losses").innerHTML = "<p>Losses :" + losses + "</p>";
-
- 		}
-
-}
-
-</script>
+<script src="assets/javascript/game.js"></script>
 	
 </body>
 </html>
