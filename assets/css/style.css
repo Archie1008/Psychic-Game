@@ -1,8 +1,41 @@
 html body {
 	width: 960px;
 	margin: 0 auto;
+	background-image: url("../images/background.jpg");
+	background-color: #1779C2;
 }
 
 .wrapper {
+	width:500px;
+	margin: 90px auto;
 	text-align: center;
+	background-color: #4b5393;
+	padding: 50px;
+}
+
+h1 {
+	font-weight: bold;
+	font-size: 25px;
+	color: #D2F0AE;
+}
+
+h3 {
+	font-weight: bolder;
+	font-size: 15px;
+}
+
+#wins {
+	color: #00F00D;
+}
+
+#losses {
+	color: #CB000D;
+}
+
+#guessesLeft {
+	color: #CBEE0D;
+}
+
+#entry {
+	color: white;
 }
